@@ -49,7 +49,7 @@
 		<script type="text/javascript" src="effects/seriously.vibrance.js"></script>
 		<script type="text/javascript" src="effects/seriously.vignette.js"></script>
 		<script type="text/javascript" src="effects/seriously.split.js"></script>
-	       <script type="text/javascript" src="lib/hls.min.js.js"></script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
  
@@ -77,7 +77,8 @@
 			#transforms input[type=range] {
 				width: 720px;
 			}
-		
+		}
+
 		</style>
 	</head>
 	<body>
@@ -85,8 +86,6 @@
 		<button id="camera">Camera</button>
 		<img id="colorbars" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAClCAYAAAA3d5OIAAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH2gIPFxcpA4p/0AAAA2BJREFUeJzt2r9qVHkcxuHvmRyHhCASRcRStErnwnYWWdgljaX1doqCld5CRNhLELtd8AJs1sq5AmFTuMUqoiABXSZIxEgyzngDyWbI4vsrfJ72/HnPwHw4U0w3Go1m1cjz59drdfWfJtt/j8/XrdOPmmxXVfUvrtXk0r9Ntq/8caU2Hm402a6qGg9+qdPT/Sbb909cqyf7t5tsV1UNmi3Dd0hwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6C+rW1duPLyz/W4uK4yfbZ6akabTeZrqqqeycv17Phsybbf/2wVGujJtNVVbVy82IN3r9vsr2+PqzRjSbTVeUNB1GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgqO9PPm02PhuOa78/dejxy6sX6szK4cf/j+Xpcm1/Pv6/l7dejevNy3fHvv7DtGpx/9yxr/9P3bQ+94f/OXiws1MnNje/zfYcph8/1uzLlyPP67quBoP53gkLCwtznbe1tVWbDT97VxeuzpqtH+HPB3dq/eefWj/Gge7++luNfn/d+jEONBl8qrcrj1s/xqF2d3drNjv6a9f3fQ2Hw7nuubS0VF3XHXneZDKpvb29ue75LfhJCUGCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CvgJd+V3gFFLyFgAAAABJRU5ErkJggg=="/>
 		<img id="img"/>
-		<input type="file'></input>
-			     <input type="url"></imput>
 
 		<video id="video" autoplay mute loop></video>
 		<select id="effects">
@@ -103,7 +102,7 @@
 		</table>
 	<script type="text/javascript">
 		let video = document.getElementById('video');
-
+if (Hls.isSupported()) {
  let hls = new Hls({
    debug: true,
    lowlatency: true,
@@ -536,5 +535,7 @@ canvas.height = canvas.width * heightRatio;
           </div>
         </div>
       </div>
+
+      <script type="text/javascript" src="hls.min.js.js"></script>
 	</body>
 </html>
