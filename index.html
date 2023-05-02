@@ -49,7 +49,7 @@
 		<script type="text/javascript" src="effects/seriously.vibrance.js"></script>
 		<script type="text/javascript" src="effects/seriously.vignette.js"></script>
 		<script type="text/javascript" src="effects/seriously.split.js"></script>
-	       <script type="text/javascript" src="hls.min.js.js"></script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
  
@@ -87,7 +87,7 @@
 		<img id="colorbars" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAClCAYAAAA3d5OIAAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH2gIPFxcpA4p/0AAAA2BJREFUeJzt2r9qVHkcxuHvmRyHhCASRcRStErnwnYWWdgljaX1doqCld5CRNhLELtd8AJs1sq5AmFTuMUqoiABXSZIxEgyzngDyWbI4vsrfJ72/HnPwHw4U0w3Go1m1cjz59drdfWfJtt/j8/XrdOPmmxXVfUvrtXk0r9Ntq/8caU2Hm402a6qGg9+qdPT/Sbb909cqyf7t5tsV1UNmi3Dd0hwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6C+rW1duPLyz/W4uK4yfbZ6akabTeZrqqqeycv17Phsybbf/2wVGujJtNVVbVy82IN3r9vsr2+PqzRjSbTVeUNB1GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgqO9PPm02PhuOa78/dejxy6sX6szK4cf/j+Xpcm1/Pv6/l7dejevNy3fHvv7DtGpx/9yxr/9P3bQ+94f/OXiws1MnNje/zfYcph8/1uzLlyPP67quBoP53gkLCwtznbe1tVWbDT97VxeuzpqtH+HPB3dq/eefWj/Gge7++luNfn/d+jEONBl8qrcrj1s/xqF2d3drNjv6a9f3fQ2Hw7nuubS0VF3XHXneZDKpvb29ue75LfhJCUGCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CBAdBgoMgwUGQ4CBIcBAkOAgSHAQJDoIEB0GCgyDBQZDgIEhwECQ4CBIcBAkOggQHQYKDIMFBkOAgSHAQJDgIEhwECQ6CvgJd+V3gFFLyFgAAAABJRU5ErkJggg=="/>
 		<img id="img"/>
 
-		<video id="video" autoplay mute loop></video>
+		<video id="video" src="https://storage.googleapis.com/kagglesdsdata/datasets/365005/712647/bbb_sunflower.mp4?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=databundle-worker-v2%40kaggle-161607.iam.gserviceaccount.com%2F20230502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230502T174902Z&X-Goog-Expires=345600&X-Goog-SignedHeaders=host&X-Goog-Signature=34c6a243da9a3b66292c61266c26e782d0338bdc9cb303897abb53e2e705ef64a16a8c0df81cd8380b2eb01f0e548e65f9ced2871229f9e90e692b00473d8c00fefd9a0e11ebb110edaee13bf7b1e329dfb784d5a8eca0b4cdfc7c1a98283c75d5babd22bc9be44c26a04b698fa370bb6a4c49861496ea6b9f0affe66ae287b91fd16c7ec5decfe6ee69c69b34028256e86efa16e9cf8c3fc4873cde616fb8776cc0ae7aae896f864e6ca684c1ac2b600dda90ece7b4fee57237b76f080b33744da1910aa9d1682dad499aa654c0592186ff430c12ffaf17f120c0d83e565555814391aa0f2996a170131a2d359739afca75350ff47b8370bdba7de537654a97' autoplay mute loop></video>
 		<select id="effects">
 			<option value="">None</option>
 		</select><br/>
@@ -102,18 +102,8 @@
 		</table>
 	<script type="text/javascript">
 		let video = document.getElementById('video');
-if (Hls.isSupported()) {
- let hls = new Hls({
-   debug: true,
-   lowlatency: true,
-   src: window.location.search.replace('?src=', '')
- }
- )
-console.log(window.location.search.replace('?src=', ''));
- hls.loadSource(window.location.search.replace('?src=', ""));
- hls.attachMedia(video);
- hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-   video.muted = true;
+
+
    video.play();
  }
 
